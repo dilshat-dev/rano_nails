@@ -2,8 +2,11 @@ services:
   - type: web
     name: rano-spring
     env: java
-    buildCommand: bash mvnw clean install
+    buildCommand: ./mvnw clean install
     startCommand: java -jar target/*.jar
     envVars:
       - key: PORT
         value: 8080
+    build:
+      env:
+        JAVA_VERSION: 17
