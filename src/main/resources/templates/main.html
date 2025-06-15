@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VELVET TOUCH FLORIDA LLC</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <style>
+        /* Высота твоего sticky header плюс небольшой запас */
+        :root {
+            --header-height: 70px;
+        }
+
+        /* Отступ при скролле */
+        section {
+            scroll-margin-top: var(--header-height);
+        }
+
+        /* Смещаем блоки, чтобы заголовок не закрывал контент */
+        #about, #services, #reviews, #contact {
+            position: relative;
+            padding-top: var(--header-height);
+            margin-top: calc(var(--header-height) * -1);
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d6bbae;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #f5efe6;
+            padding: 40px 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            background-color: #fff0f5;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #4b3a2f;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        h2, h3 {
+            color: #4b3a2f;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 320px;
+            overflow: hidden;
+            text-align: left;
+
+            display: flex;             /* ставим flex-контейнер */
+            flex-direction: column;    /* колонки (вертикальное направление) */
+            justify-content: space-between; /* распределяем содержимое между верхом и низом */
+            min-height: 450px;         /* задаем минимум высоты карточки — подберите под ваш контент */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h4 {
+            margin: 10px;
+            color: #4b3a2f;
+            font-size: 18px;
+        }
+
+        .card p {
+            margin: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Новый стиль для отзывов */
+        #reviews {
+            background-color: #fff0f5;
+            border-radius: 16px;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+
+        #reviews h2 {
+            font-weight: 600;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 300px;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #4b3a2f;
+            text-align: right;
+            font-size: 16px;
+        }
+
+        #about {
+            background-color: #fff0f5;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        #about h2 {
+            text-align: center;
+            font-weight: 600;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        #about p {
+            font-size: 17px;
+            margin: 16px 0;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        #about p.contact {
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        #about p.contact::before {
+            content: '📞';
+            margin-right: 8px;
+        }
+
+        #about p.address::before {
+            content: '📍';
+            margin-right: 8px;
+        }
+
+        #about p.working::before {
+            content: '⏰';
+            margin-right: 8px;
+        }
+
+        #about p.contact::before,
+        #about p.address::before,
+        #about p.working::before {
+            content: none;
+        }
+
+        #about a {
+            color: #4b3a2f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #about a:hover {
+            text-decoration: underline;
+        }
+
+        iframe {
+            border-radius: 12px;
+            margin-top: 30px;
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #fff0f5;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .book-btn {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px auto 20px;
+            padding: 12px 0;
+            background-color: #A6860CFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+
+            /* Можно убрать margin-top, чтобы кнопка прижалась к низу */
+            /* margin-top: auto; */
+        }
+
+        .book-btn:hover {
+            background-color: #AF9911FF;
+        }
+
+    </style>
+</head>
+<body>
+<header style="position: sticky; top: 0; z-index: 1000; background-color: #f5efe6; padding: 10px 15px; text-align: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <h1 style="margin: 0; font-size: 1.5em;">Beauty by Rano</h1>
+    <nav style="margin-top: 5px;">
+        <a href="#about" style="margin: 0 10px; font-size: 0.95em;">About Us</a>
+        <a href="#services" style="margin: 0 10px; font-size: 0.95em;">Services</a>
+        <a href="#reviews" style="margin: 0 10px; font-size: 0.95em;">Reviews</a>
+        <a href="#contact" style="margin: 0 10px; font-size: 0.95em;">Contact Us</a>
+    </nav>
+</header>
+<div class="container">
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Hello! My name is <strong>Rano</strong>, and I’m a certified nail technician with a deep love for detail and aesthetics. I’ve been creating beautiful nails for several years, and I believe every set should make you feel confident and empowered </p>
+            <p>I follow strict hygiene and safety standards while using only high-quality, professional-grade products. My goal isn’t just to provide a service — I want every client to walk away happy, relaxed, and already looking forward to their next appointment </p>
+        </section>
+
+        <section id="services">
+            <h2>Services and prices</h2>
+
+            <h3>Manicure</h3>
+            <div class="cards">
+                <div class="card">
+                    <img th:src="@{/images/russian-manicure-nude-nails.png}" alt="Classic Russian Manicure" />
+                    <h4>Classic Russian Manicure (NO GEL) — $60</h4>
+                    <p>A clean, sharp Russian-style mani without the gel. Perfect for babes who love that fresh, natural nail look.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/russian-hard-gel-manicure.webp}" alt="Russian Hard Gel Manicure" />
+                    <h4>Russian Hard Gel Manicure — $80</h4>
+                    <p>Strong, sculpted nails that last for weeks — no chips, no drama. Ideal if you want flawless nails that don’t quit.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/medium-nails.jpg}" alt="Medium Nails" />
+                    <h4>Russian Hard Gel Manicure (Medium Nails) — $90</h4>
+                    <p>Sleek medium-length nails with serious staying power. Just the right mix of classy and comfy.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/long-nails.webp}" alt="Long Nails" />
+                    <h4>Russian Hard Gel Manicure (Long Nails) — $110</h4>
+                    <p>Long, bold, and built to slay — with structure and shine that lasts. For when you want to show up and stand out.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/extension-nails.webp}" alt="Extension Nails" />
+                    <h4>Extension Nails — $140</h4>
+                    <p>Full nail extensions with that “wow” factor. Go big, go glam, and let your nails do the talking.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+
+            <h3>🎨 Nail Art</h3>
+            <div class="cards">
+                <div class="card">
+                    <img th:src="@{/images/french-design.jpg}" alt="French" />
+                    <h4>French Design — $15</h4>
+                    <p>Timeless, classy, and always a vibe. A soft glam look that never goes out of style.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/simple-designs.jpg}" alt="Simple" />
+                    <h4>Simple Designs — $5</h4>
+                    <p>Minimal but make it cute. Clean little accents that add just the right touch.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/ombré-design.webp}" alt="Ombré" />
+                    <h4>Ombré Design — $10</h4>
+                    <p>Smooth color blends for soft, dreamy nails. Lowkey gorgeous with a flawless fade.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/chrome-design.webp}" alt="Chrome" />
+                    <h4>Chrome Design — $10</h4>
+                    <p>That glassy, mirror-shine finish everyone’s obsessed with. If you’re into trendy and extra — this is it.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+
+            <h3>🔧 Extras</h3>
+            <div class="cards">
+                <div class="card">
+                    <img th:src="@{/images/removal.webp}" alt="Removal" />
+                    <h4>Dip Powder or Acrylic Removal — $20</h4>
+                    <p>Gentle removal with no damage. We keep it safe, smooth, and ready for your next set.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/nail-repair.jpeg}" alt="Repair" />
+                    <h4>Nail Repair — $5</h4>
+                    <p>Cracked or chipped? No stress — we’ll fix it like it never happened.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+
+            <h3>🦶 Pedicures</h3>
+            <div class="cards">
+                <div class="card">
+                    <img th:src="@{/images/smart-pedicure-polish.jpg}" alt="Pedicure Polish" />
+                    <h4>Smart Pedicure Polish — $95</h4>
+                    <p>Deep clean + polish = fresh feet and flawless toes. Total TLC with serious shine.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/smart-pedicure-no-polish.jpg}" alt="Pedicure No Polish" />
+                    <h4>Smart Pedicure (No Polish) — $75</h4>
+                    <p>Pure foot care, no color needed. Clean, smooth, and ready to glow.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2>What Our Clients Say</h2>
+            <div class="cards" style="justify-content: center; gap: 25px;">
+                <div class="review-card">
+                    <p class="review-text">"Rano is absolutely amazing! My nails look flawless and last for weeks. Highly recommend her for anyone wanting top-quality service."</p>
+                    <p class="review-author">— Elena S.</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"The best manicure experience I’ve ever had. Friendly, professional, and the attention to detail is incredible."</p>
+                    <p class="review-author">— Marina K.</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Highly recommend for anyone who cares about quality and care. Rano’s hard gel manicure gave me perfect nails for my wedding!"</p>
+                    <p class="review-author">— Anna M.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>📞 Contact Us</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: flex-start; margin-top: 30px;">
+                <!-- Contact Info -->
+                <div style="flex: 1 1 350px; background-color: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 500px;">
+                    <p class="address"><strong>Address:</strong> 3289 Oxford Dr, Kissimmee, FL zipcode 34746</p>
+                    <p class="address"><strong>Email:</strong>velvettouch.fl@gmail.com</p>
+                    <p class="contact">
+                        <i class="fas fa-phone" style="margin-right: 8px; color: #c71585;"></i>
+                        <strong>Phone:</strong> <a href="tel:+16895007414">+16898371605</a>
+                    </p>
+
+                    <p class="contact">
+                        <i class="fab fa-whatsapp" style="margin-right: 8px; color: #25D366;"></i>
+                        <strong>WhatsApp:</strong> <a href="https://wa.me/+16895007414" target="_blank" rel="noopener">Message on WhatsApp</a>
+                    </p>
+
+                    <p class="contact">
+                        <i class="fab fa-instagram" style="margin-right: 8px; color: #E1306C;"></i>
+                        <strong>Instagram:</strong> <a href="https://www.instagram.com/reel/DBnOBkQt_i2/?igsh=MWc0MGV1dDVydnl4MA==" target="_blank" rel="noopener">@velvettouch_fl</a>
+                    </p>
+
+                    <p class="working"><strong>Working Hours:</strong> Mon–Sun: 10:00 AM – 8:00 PM</p>
+                </div>
+
+                <!-- Map -->
+                <div style="flex: 1 1 350px; max-width: 500px;">
+                    <iframe
+                            src="https://maps.google.com/maps?q=3289%20Oxford%20Dr,%20Kissimmee,%20FL%2034746&z=15&output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
+                            style="width: 100%; height: 100%; min-height: 300px; border: none; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"
+                    ></iframe>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2025 VELVET TOUCH FLORIDA LLC. Все права защищены.</p>
+</footer>
+</body>
+</html>
