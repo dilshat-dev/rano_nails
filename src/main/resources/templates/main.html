@@ -83,7 +83,7 @@
         }
 
         .card {
-            background-color: #fff;
+            background-color: #eoc3a3;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -122,7 +122,7 @@
 
         /* Новый стиль для отзывов */
         #reviews {
-            background-color: #fff0f5;
+            background-color: #eoc3a3;
             border-radius: 16px;
             padding: 40px 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -137,7 +137,7 @@
         }
 
         .review-card {
-            background-color: #fff;
+            background-color: #eoc3a3;
             border-radius: 12px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
             padding: 20px;
@@ -168,7 +168,7 @@
         }
 
         #about {
-            background-color: #fff0f5;
+            background-color: #eoc3a3;
             border-radius: 16px;
             padding: 40px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -265,11 +265,45 @@
             background-color: #AF9911FF;
         }
 
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about-logo img {
+            max-width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .about-logo img {
+                max-width: 150px;
+            }
+        }
+
+        .card a {
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
-<header style="position: sticky; top: 0; z-index: 1000; background-color: #f5efe6; padding: 10px 15px; text-align: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-    <h1 style="margin: 0; font-size: 1.5em;">Beauty by Rano</h1>
+<header style="position: sticky; top: 0; z-index: 1000; background-color: #eoc3a3; padding: 10px 15px; text-align: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <h1 style="margin: 0; font-size: 1.5em;">VELVET TOUCH</h1>
     <nav style="margin-top: 5px;">
         <a href="#about" style="margin: 0 10px; font-size: 0.95em;">About Us</a>
         <a href="#services" style="margin: 0 10px; font-size: 0.95em;">Services</a>
@@ -281,8 +315,15 @@
     <main>
         <section id="about">
             <h2>About Us</h2>
-            <p>Hello! My name is <strong>Rano</strong>, and I’m a certified nail technician with a deep love for detail and aesthetics. I’ve been creating beautiful nails for several years, and I believe every set should make you feel confident and empowered </p>
-            <p>I follow strict hygiene and safety standards while using only high-quality, professional-grade products. My goal isn’t just to provide a service — I want every client to walk away happy, relaxed, and already looking forward to their next appointment </p>
+            <div class="about-content">
+                <div class="about-logo">
+                    <img src="/images/logo.jpeg" alt="Logo of Velvet Touch">
+                </div>
+                <div class="about-text">
+                    <p>Hello! My name is <strong>Rano</strong>, and I’m a certified nail technician with a deep love for detail and aesthetics. I’ve been creating beautiful nails for several years, and I believe every set should make you feel confident and empowered.</p>
+                    <p>I follow strict hygiene and safety standards while using only high-quality, professional-grade products. My goal isn’t just to provide a service — I want every client to walk away happy, relaxed, and already looking forward to their next appointment.</p>
+                </div>
+            </div>
         </section>
 
         <section id="services">
@@ -294,59 +335,93 @@
                     <img th:src="@{/images/russian-manicure-nude-nails.png}" alt="Classic Russian Manicure" />
                     <h4>Classic Russian Manicure (NO GEL) — $60</h4>
                     <p>A clean, sharp Russian-style mani without the gel. Perfect for babes who love that fresh, natural nail look.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
                     <img th:src="@{/images/russian-hard-gel-manicure.webp}" alt="Russian Hard Gel Manicure" />
                     <h4>Russian Hard Gel Manicure — $80</h4>
                     <p>Strong, sculpted nails that last for weeks — no chips, no drama. Ideal if you want flawless nails that don’t quit.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
                     <img th:src="@{/images/medium-nails.jpg}" alt="Medium Nails" />
                     <h4>Russian Hard Gel Manicure (Medium Nails) — $90</h4>
                     <p>Sleek medium-length nails with serious staying power. Just the right mix of classy and comfy.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
                     <img th:src="@{/images/long-nails.webp}" alt="Long Nails" />
                     <h4>Russian Hard Gel Manicure (Long Nails) — $110</h4>
                     <p>Long, bold, and built to slay — with structure and shine that lasts. For when you want to show up and stand out.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
-                    <img th:src="@{/images/extension-nails.webp}" alt="Extension Nails" />
+                    <img th:src="@{/images/extension-nails.jpeg}" alt="Extension Nails" />
                     <h4>Extension Nails — $140</h4>
                     <p>Full nail extensions with that “wow” factor. Go big, go glam, and let your nails do the talking.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
             </div>
 
             <h3>🎨 Nail Art</h3>
             <div class="cards">
                 <div class="card">
-                    <img th:src="@{/images/french-design.jpg}" alt="French" />
+                    <img th:src="@{/images/french-design.jpeg}" alt="French" />
                     <h4>French Design — $15</h4>
                     <p>Timeless, classy, and always a vibe. A soft glam look that never goes out of style.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
-                    <img th:src="@{/images/simple-designs.jpg}" alt="Simple" />
+                    <img th:src="@{/images/simple-designs.jpeg}" alt="Simple" />
                     <h4>Simple Designs — $5</h4>
                     <p>Minimal but make it cute. Clean little accents that add just the right touch.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
                     <img th:src="@{/images/ombré-design.webp}" alt="Ombré" />
                     <h4>Ombré Design — $10</h4>
                     <p>Smooth color blends for soft, dreamy nails. Lowkey gorgeous with a flawless fade.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
-                    <img th:src="@{/images/chrome-design.webp}" alt="Chrome" />
+                    <img th:src="@{/images/chrome-design.jpeg}" alt="Chrome" />
                     <h4>Chrome Design — $10</h4>
                     <p>That glassy, mirror-shine finish everyone’s obsessed with. If you’re into trendy and extra — this is it.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
             </div>
 
@@ -356,29 +431,42 @@
                     <img th:src="@{/images/removal.webp}" alt="Removal" />
                     <h4>Dip Powder or Acrylic Removal — $20</h4>
                     <p>Gentle removal with no damage. We keep it safe, smooth, and ready for your next set.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
                     <img th:src="@{/images/nail-repair.jpeg}" alt="Repair" />
                     <h4>Nail Repair — $5</h4>
                     <p>Cracked or chipped? No stress — we’ll fix it like it never happened.</p>
-                    <button class="book-btn">Book Now</button>
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
             </div>
 
             <h3>🦶 Pedicures</h3>
             <div class="cards">
                 <div class="card">
-                    <img th:src="@{/images/smart-pedicure-polish.jpg}" alt="Pedicure Polish" />
+                    <img th:src="@{/images/smart-pedicure-polish.jpeg}" alt="Pedicure Polish" />
                     <h4>Smart Pedicure Polish — $95</h4>
                     <p>Deep clean + polish = fresh feet and flawless toes. Total TLC with serious shine.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
+
                 <div class="card">
-                    <img th:src="@{/images/smart-pedicure-no-polish.jpg}" alt="Pedicure No Polish" />
+                    <img th:src="@{/images/smart-pedicure-no-polish.jpeg}" alt="Pedicure No Polish" />
                     <h4>Smart Pedicure (No Polish) — $75</h4>
                     <p>Pure foot care, no color needed. Clean, smooth, and ready to glow.</p>
-                    <button class="book-btn">Book Now</button>
+
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                        <button class="book-btn">Book Now</button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -405,12 +493,12 @@
             <h2>📞 Contact Us</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: flex-start; margin-top: 30px;">
                 <!-- Contact Info -->
-                <div style="flex: 1 1 350px; background-color: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 500px;">
+                <div style="flex: 1 1 350px; background-color: #eoc3a3; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 500px;">
                     <p class="address"><strong>Address:</strong> 3289 Oxford Dr, Kissimmee, FL zipcode 34746</p>
                     <p class="address"><strong>Email:</strong>velvettouch.fl@gmail.com</p>
                     <p class="contact">
                         <i class="fas fa-phone" style="margin-right: 8px; color: #c71585;"></i>
-                        <strong>Phone:</strong> <a href="tel:+16895007414">+16898371605</a>
+                        <strong>Phone:</strong> <a href="tel:+16895007414">+1 (386) 795-5554</a>
                     </p>
 
                     <p class="contact">
