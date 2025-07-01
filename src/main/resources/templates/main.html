@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>VELVET TOUCH FLORIDA LLC</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Шрифты -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@300;400;600&display=swap"
+          rel="stylesheet"/>
 
     <style>
         /* Высота твоего sticky header плюс небольшой запас */
@@ -91,10 +92,10 @@
             overflow: hidden;
             text-align: left;
 
-            display: flex;             /* ставим flex-контейнер */
-            flex-direction: column;    /* колонки (вертикальное направление) */
+            display: flex; /* ставим flex-контейнер */
+            flex-direction: column; /* колонки (вертикальное направление) */
             justify-content: space-between; /* распределяем содержимое между верхом и низом */
-            min-height: 450px;         /* задаем минимум высоты карточки — подберите под ваш контент */
+            min-height: 450px; /* задаем минимум высоты карточки — подберите под ваш контент */
         }
 
         .card:hover {
@@ -139,7 +140,7 @@
         .review-card {
             background-color: #eoc3a3;
             border-radius: 12px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             flex: 1 1 300px;
             max-width: 300px;
@@ -150,7 +151,7 @@
         }
 
         .review-card:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .review-text {
@@ -320,8 +321,12 @@
                     <img src="/images/logo.jpeg" alt="Logo of Velvet Touch">
                 </div>
                 <div class="about-text">
-                    <p>Hello! My name is <strong>Rano</strong>, and I’m a certified nail technician with a deep love for detail and aesthetics. I’ve been creating beautiful nails for several years, and I believe every set should make you feel confident and empowered.</p>
-                    <p>I follow strict hygiene and safety standards while using only high-quality, professional-grade products. My goal isn’t just to provide a service — I want every client to walk away happy, relaxed, and already looking forward to their next appointment.</p>
+                    <p>Hello! My name is <strong>Rano</strong>, and I’m a certified nail technician with a deep love for
+                        detail and aesthetics. I’ve been creating beautiful nails for several years, and I believe every
+                        set should make you feel confident and empowered.</p>
+                    <p>I follow strict hygiene and safety standards while using only high-quality, professional-grade
+                        products. My goal isn’t just to provide a service — I want every client to walk away happy,
+                        relaxed, and already looking forward to their next appointment.</p>
                 </div>
             </div>
         </section>
@@ -332,51 +337,60 @@
             <h3>Manicure</h3>
             <div class="cards">
                 <div class="card">
-                    <img th:src="@{/images/russian-manicure-nude-nails.png}" alt="Classic Russian Manicure" />
+                    <img th:src="@{/images/russian-manicure-nude-nails.png}" alt="Classic Russian Manicure"/>
                     <h4>Classic Russian Manicure (NO GEL) — $60</h4>
-                    <p>A clean, sharp Russian-style mani without the gel. Perfect for babes who love that fresh, natural nail look.</p>
+                    <p>A clean, sharp Russian-style mani without the gel. Perfect for babes who love that fresh, natural
+                        nail look.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/russian-hard-gel-manicure.webp}" alt="Russian Hard Gel Manicure" />
+                    <img th:src="@{/images/russian-hard-gel-manicure.webp}" alt="Russian Hard Gel Manicure"/>
                     <h4>Russian Hard Gel Manicure — $80</h4>
-                    <p>Strong, sculpted nails that last for weeks — no chips, no drama. Ideal if you want flawless nails that don’t quit.</p>
+                    <p>Strong, sculpted nails that last for weeks — no chips, no drama. Ideal if you want flawless nails
+                        that don’t quit.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/medium-nails.jpg}" alt="Medium Nails" />
+                    <img th:src="@{/images/medium-nails.jpg}" alt="Medium Nails"/>
                     <h4>Russian Hard Gel Manicure (Medium Nails) — $90</h4>
                     <p>Sleek medium-length nails with serious staying power. Just the right mix of classy and comfy.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/long-nails.webp}" alt="Long Nails" />
+                    <img th:src="@{/images/long-nails.webp}" alt="Long Nails"/>
                     <h4>Russian Hard Gel Manicure (Long Nails) — $110</h4>
-                    <p>Long, bold, and built to slay — with structure and shine that lasts. For when you want to show up and stand out.</p>
+                    <p>Long, bold, and built to slay — with structure and shine that lasts. For when you want to show up
+                        and stand out.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/extension-nails.jpeg}" alt="Extension Nails" />
+                    <img th:src="@{/images/extension-nails.jpeg}" alt="Extension Nails"/>
                     <h4>Extension Nails — $140</h4>
-                    <p>Full nail extensions with that “wow” factor. Go big, go glam, and let your nails do the talking.</p>
+                    <p>Full nail extensions with that “wow” factor. Go big, go glam, and let your nails do the
+                        talking.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
@@ -385,41 +399,46 @@
             <h3>🎨 Nail Art</h3>
             <div class="cards">
                 <div class="card">
-                    <img th:src="@{/images/french-design.jpeg}" alt="French" />
+                    <img th:src="@{/images/french-design.jpeg}" alt="French"/>
                     <h4>French Design — $15</h4>
                     <p>Timeless, classy, and always a vibe. A soft glam look that never goes out of style.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/simple-designs.jpeg}" alt="Simple" />
+                    <img th:src="@{/images/simple-designs.jpeg}" alt="Simple"/>
                     <h4>Simple Designs — $5</h4>
                     <p>Minimal but make it cute. Clean little accents that add just the right touch.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/ombré-design.webp}" alt="Ombré" />
+                    <img th:src="@{/images/ombré-design.webp}" alt="Ombré"/>
                     <h4>Ombré Design — $10</h4>
                     <p>Smooth color blends for soft, dreamy nails. Lowkey gorgeous with a flawless fade.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/chrome-design.jpeg}" alt="Chrome" />
+                    <img th:src="@{/images/chrome-design.jpeg}" alt="Chrome"/>
                     <h4>Chrome Design — $10</h4>
-                    <p>That glassy, mirror-shine finish everyone’s obsessed with. If you’re into trendy and extra — this is it.</p>
+                    <p>That glassy, mirror-shine finish everyone’s obsessed with. If you’re into trendy and extra — this
+                        is it.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
@@ -428,20 +447,22 @@
             <h3>🔧 Extras</h3>
             <div class="cards">
                 <div class="card">
-                    <img th:src="@{/images/removal.webp}" alt="Removal" />
+                    <img th:src="@{/images/removal.webp}" alt="Removal"/>
                     <h4>Dip Powder or Acrylic Removal — $20</h4>
                     <p>Gentle removal with no damage. We keep it safe, smooth, and ready for your next set.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/nail-repair.jpeg}" alt="Repair" />
+                    <img th:src="@{/images/nail-repair.jpeg}" alt="Repair"/>
                     <h4>Nail Repair — $5</h4>
                     <p>Cracked or chipped? No stress — we’ll fix it like it never happened.</p>
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
@@ -450,21 +471,23 @@
             <h3>🦶 Pedicures</h3>
             <div class="cards">
                 <div class="card">
-                    <img th:src="@{/images/smart-pedicure-polish.jpeg}" alt="Pedicure Polish" />
+                    <img th:src="@{/images/smart-pedicure-polish.jpeg}" alt="Pedicure Polish"/>
                     <h4>Smart Pedicure Polish — $95</h4>
                     <p>Deep clean + polish = fresh feet and flawless toes. Total TLC with serious shine.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
 
                 <div class="card">
-                    <img th:src="@{/images/smart-pedicure-no-polish.jpeg}" alt="Pedicure No Polish" />
+                    <img th:src="@{/images/smart-pedicure-no-polish.jpeg}" alt="Pedicure No Polish"/>
                     <h4>Smart Pedicure (No Polish) — $75</h4>
                     <p>Pure foot care, no color needed. Clean, smooth, and ready to glow.</p>
 
-                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1" target="_blank" rel="noopener">
+                    <a href="https://booksy.com/en-us/1502797_velvettouch-florida-llc_nail-salon_134766_kissimmee#ba_s=af_1"
+                       target="_blank" rel="noopener">
                         <button class="book-btn">Book Now</button>
                     </a>
                 </div>
@@ -475,15 +498,18 @@
             <h2>What Our Clients Say</h2>
             <div class="cards" style="justify-content: center; gap: 25px;">
                 <div class="review-card">
-                    <p class="review-text">"Rano is absolutely amazing! My nails look flawless and last for weeks. Highly recommend her for anyone wanting top-quality service."</p>
+                    <p class="review-text">"Rano is absolutely amazing! My nails look flawless and last for weeks.
+                        Highly recommend her for anyone wanting top-quality service."</p>
                     <p class="review-author">— Brittany</p>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">"The best manicure experience I’ve ever had. Friendly, professional, and the attention to detail is incredible."</p>
+                    <p class="review-text">"The best manicure experience I’ve ever had. Friendly, professional, and the
+                        attention to detail is incredible."</p>
                     <p class="review-author">— Stephanie</p>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">"Highly recommend for anyone who cares about quality and care. Rano’s hard gel manicure gave me perfect nails for my wedding!"</p>
+                    <p class="review-text">"Highly recommend for anyone who cares about quality and care. Rano’s hard
+                        gel manicure gave me perfect nails for my wedding!"</p>
                     <p class="review-author">— Anna</p>
                 </div>
             </div>
@@ -503,12 +529,15 @@
 
                     <p class="contact">
                         <i class="fab fa-whatsapp" style="margin-right: 8px; color: #25D366;"></i>
-                        <strong>WhatsApp:</strong> <a href="https://wa.me/+16895007414" target="_blank" rel="noopener">Message on WhatsApp</a>
+                        <strong>WhatsApp:</strong> <a href="https://wa.me/+16895007414" target="_blank" rel="noopener">Message
+                        on WhatsApp</a>
                     </p>
 
                     <p class="contact">
                         <i class="fab fa-instagram" style="margin-right: 8px; color: #E1306C;"></i>
-                        <strong>Instagram:</strong> <a href="https://www.instagram.com/reel/DBnOBkQt_i2/?igsh=MWc0MGV1dDVydnl4MA==" target="_blank" rel="noopener">@velvettouch_fl</a>
+                        <strong>Instagram:</strong> <a
+                            href="https://www.instagram.com/reel/DBnOBkQt_i2/?igsh=MWc0MGV1dDVydnl4MA==" target="_blank"
+                            rel="noopener">@velvettouch_fl</a>
                     </p>
 
                     <p class="working"><strong>Working Hours:</strong> Mon–Sun: 10:00 AM – 8:00 PM</p>
@@ -531,7 +560,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2025 VELVET TOUCH FLORIDA LLC. Все права защищены.</p>
+    <p>&copy; 2025 VELVET TOUCH FLORIDA LLC. All rights reserved.</p>
 </footer>
 </body>
 </html>
