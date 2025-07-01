@@ -18,6 +18,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/track/click") // <--- Только для этого URL
+                )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").authenticated()
                         .anyRequest().permitAll()

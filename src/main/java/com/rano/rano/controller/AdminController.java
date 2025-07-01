@@ -1,7 +1,7 @@
 package com.rano.rano.controller;
 
+import com.rano.rano.repository.ButtonClickRepository;
 import com.rano.rano.repository.VisitLogRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,14 +14,26 @@ import java.util.Map;
 @RequestMapping("/admin")
 public class AdminController {
 
-    @Autowired
-    private VisitLogRepository visitLogRepository;
+    private final VisitLogRepository visitLogRepository;
+    private final ButtonClickRepository buttonClickRepository;
+
+    public AdminController(VisitLogRepository visitLogRepository, ButtonClickRepository buttonClickRepository) {
+        this.visitLogRepository = visitLogRepository;
+        this.buttonClickRepository = buttonClickRepository;
+    }
 
     @GetMapping("/stats")
     public String stats(Model model) {
         List<Map<String, Object>> stats = visitLogRepository.countVisitsByDay();
+        List<Map<String, Object>> clicks = buttonClickRepository.countClicksByDayAndLabel();
+        List<Map<String, Object>> totalClicks = buttonClickRepository.countTotalClicksByLabel();
+
         model.addAttribute("stats", stats);
+        model.addAttribute("clicks", clicks);
+        model.addAttribute("totalClicks", totalClicks);
+
         return "stats";
     }
+
 
 }

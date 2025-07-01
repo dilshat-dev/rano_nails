@@ -559,6 +559,20 @@
     </main>
 </div>
 
+<script>
+    document.querySelectorAll('.book-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const label = this.closest('.card').querySelector('h4').innerText;
+            fetch('/track/click', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ label: label })
+            });
+        });
+    });
+</script>
+
+
 <footer>
     <p>&copy; 2025 VELVET TOUCH FLORIDA LLC. All rights reserved.</p>
 </footer>
